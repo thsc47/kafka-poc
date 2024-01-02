@@ -3,7 +3,7 @@ version: "3"
 services:
   app:
     build: .
-    container_name: gokafka
+    container_name: gokafkapoc
     volumes:
       - .:/go/src/
     extra_hosts:
@@ -42,7 +42,7 @@ services:
     ports:
       - "9021:9021"
     environment:
-      CONTROL_CENTER_BOOTSTRAP_SERVERS: "kafka:9092"
+      CONTROL_CENTER_BOOTSTRAP_SERVERS: 'kafka:9092'
       CONTROL_CENTER_REPLICATION_FACTOR: 1
       CONTROL_CENTER_CONNECT_CLUSTER: http://app-connect:8083
       PORT: 9021
